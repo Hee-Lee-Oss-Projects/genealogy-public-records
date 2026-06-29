@@ -1,0 +1,36 @@
+{
+  "id": "genealogy-public-records-sparql-001",
+  "title": "Optional hosted SPARQL endpoint",
+  "project": "genealogy-public-records",
+  "type": "code",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["genealogy", "family-history", "linked-data", "open-history", "public-data"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "The corpus is published as GEDCOM X JSON and JSON-LD exports, but researchers accustomed to linked-data workflows benefit from a SPARQL query endpoint that lets them ask federated questions across the corpus and Wikidata simultaneously. This is explicitly an optional, post-M3 enhancement that depends on a steward being willing to host the endpoint. Without a steward hosting commitment, this task should not be started. The endpoint must collect no visitor PII and enforce read-only access.",
+  "objective": "Scaffold a SPARQL endpoint over the JSON-LD exports of the corpus, configure it for read-only public access with no visitor PII collection, and document deployment requirements so a steward can evaluate whether to host it.",
+  "acceptanceCriteria": [
+    "SPARQL endpoint scaffolded over the JSON-LD corpus exports (e.g., using Apache Jena Fuseki or equivalent open-source triplestore).",
+    "Endpoint is read-only; no write or update operations permitted.",
+    "No visitor PII collected; no user accounts required.",
+    "Deployment documentation describes hosting requirements (CPU, RAM, storage) so a steward can evaluate feasibility.",
+    "At least 3 example SPARQL queries documented demonstrating useful genealogical questions (e.g., all persons born in a specific county, all persons with a specific surname who appear in multiple sources).",
+    "Endpoint deployment depends on a steward hosting commitment; this task delivers the scaffold and documentation, not a live public endpoint.",
+    "pnpm build && pnpm test && pnpm lint pass for any TypeScript/ESM components; endpoint scaffold committed via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-export-001.json",
+    "tasks/genealogy-public-records-partner-003.json",
+    "https://jena.apache.org/documentation/fuseki2/",
+    "https://www.w3.org/TR/sparql11-query/"
+  ],
+  "output": "packages/sparql-endpoint/ — SPARQL endpoint scaffold (configuration + deployment docs + example queries), committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

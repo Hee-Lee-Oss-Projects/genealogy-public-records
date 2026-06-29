@@ -1,0 +1,33 @@
+{
+  "id": "genealogy-public-records-quality-001",
+  "title": "Automated anomaly/outlier flagging for review",
+  "project": "genealogy-public-records",
+  "type": "code",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["genealogy", "family-history", "public-data", "quality-assurance", "data-pipeline"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "As the corpus grows to thousands of records across multiple sources, transcription errors and data anomalies become increasingly difficult to catch through manual sampling alone. An automated anomaly detector can flag statistically unlikely values (e.g., a reported age implying birth in 1200, an implausibly long lifespan, a residence recorded before birth) for human review before they enter the published corpus. All flagging is assistive — no automated corrections are applied; human reviewers make all acceptance decisions.",
+  "objective": "Build a TypeScript/ESM anomaly and outlier flagging tool that scans corpus records for statistically unlikely or logically inconsistent values (e.g., impossible dates, implausible lifespans, conflicting ages across records), flags them as 'review-required' without modifying the underlying data, and produces a human-review worklist.",
+  "acceptanceCriteria": [
+    "Flagging tool is assistive only: it marks records as 'review-required' but applies zero automated corrections.",
+    "Flags at minimum: birth year implying age >120 at death or census date; birth year later than death year; residence or event date before birth year; age-derived birth year inconsistent across records by more than a defined threshold.",
+    "Each flagged record includes: entity ID, field name, flagged value, the rule that triggered the flag, and a brief explanation for the reviewer.",
+    "Tool produces a structured review worklist (JSON) that integrates with the existing review/ directory conventions.",
+    "Tool does not modify corpus records directly; all remediation is done by a human reviewer via a separate PR.",
+    "pnpm build && pnpm test && pnpm lint pass; tool committed via PR with unit tests covering each flagging rule."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-data-001.json",
+    "tasks/genealogy-public-records-qa-001.json"
+  ],
+  "output": "packages/qa/src/anomaly-detector.ts (TypeScript/ESM anomaly flagging tool) with tests, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

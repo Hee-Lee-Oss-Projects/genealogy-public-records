@@ -1,0 +1,34 @@
+{
+  "id": "genealogy-public-records-i18n-001",
+  "title": "Multilingual person/place labels via Wikidata",
+  "project": "genealogy-public-records",
+  "type": "data",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["genealogy", "family-history", "linked-data", "open-history", "internationalization"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Person and place names in the corpus are recorded as they appear in the English-language source documents. Wikidata (CC0) provides multilingual labels for many entities, enabling researchers who work in other languages to find and cite records using names in their preferred language. This is a post-M3 enhancement that adds multilingual labels to entities already in the corpus that have confirmed Wikidata QIDs from the recon-001/recon-002 tasks.",
+  "objective": "Fetch Wikidata multilingual labels (at minimum Spanish, French, German, and Portuguese) for all corpus entities that have a confirmed Wikidata QID, add them as alternate-label entries in the GEDCOM X-aligned records, and publish the augmented dataset under CC0-1.0.",
+  "acceptanceCriteria": [
+    "Multilingual labels fetched from Wikidata CC0 data for all corpus entities with confirmed QIDs.",
+    "At minimum Spanish, French, German, and Portuguese labels added where Wikidata provides them; missing labels are omitted rather than fabricated.",
+    "Labels added as alternate-label entries in the existing GEDCOM X records, not as replacements for the original English transcription.",
+    "Dataset published as CC0-1.0 (Wikidata labels are CC0).",
+    "Augmented records still pass all CI gates.",
+    "Multilingual label dataset committed via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-recon-002.json",
+    "https://www.wikidata.org/wiki/Wikidata:Data_access",
+    "https://www.wikidata.org/wiki/Wikidata:Licensing"
+  ],
+  "output": "corpus/labels/multilingual-labels.json — multilingual Wikidata labels for confirmed QID entities, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

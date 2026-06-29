@@ -1,0 +1,36 @@
+{
+  "id": "genealogy-public-records-vital-001",
+  "title": "Vital-records embargo matrix (per-jurisdiction) + first cleared set",
+  "project": "genealogy-public-records",
+  "type": "research",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["genealogy", "family-history", "privacy", "public-data", "policy"],
+  "riskTier": "high",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Vital records (birth, marriage, and death certificates) are among the most genealogically valuable sources, but their access is governed by per-jurisdiction privacy embargoes that vary widely — from 25 years to 100 years or more depending on the US state and record type. The project cannot safely use vital records without a per-jurisdiction embargo matrix that documents the exact embargo period for each record type in each jurisdiction. Records still inside their embargo period are excluded. This is a high-risk, privacy-heavy backlog task explicitly flagged as requiring careful per-jurisdiction analysis and privacy reviewer sign-off.",
+  "objective": "Research and document the vital-records privacy embargo periods for birth, marriage, and death certificates across US jurisdictions, compile this into a machine-readable per-jurisdiction embargo matrix, identify any record set where the embargo has verifiably elapsed for a specific historical date range, and submit that first cleared set to sources/allowlist.yml for privacy reviewer evaluation.",
+  "acceptanceCriteria": [
+    "Per-jurisdiction embargo matrix covers at least 10 US states, documenting embargo periods for birth, marriage, and death certificates in each.",
+    "Matrix is machine-readable (YAML or JSON) and references the authoritative statute or regulation for each embargo period.",
+    "Any ambiguity in a jurisdiction's embargo period defaults to exclusion (uncertainty -> exclude).",
+    "At least one record set identified where the embargo has verifiably elapsed for a specific historical date range, with the legal basis documented.",
+    "That first cleared set submitted as a sources/allowlist.yml entry (status: pending) with full embargo analysis for privacy reviewer sign-off.",
+    "Privacy reviewer sign-off required before status advances to 'approved'; this task delivers the analysis and pending entry, not an approved extraction.",
+    "Embargo matrix and analysis committed as docs/vital-records-embargo-matrix.md plus a sources/allowlist.yml pending entry, via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-privacy-001.json",
+    "tasks/genealogy-public-records-license-001.json",
+    "https://www.cdc.gov/nchs/w2w/index.htm",
+    "https://www.archives.gov/research/vital-records"
+  ],
+  "output": "docs/vital-records-embargo-matrix.md — per-jurisdiction embargo matrix with statutory references, plus a sources/allowlist.yml pending entry for the first cleared record set, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

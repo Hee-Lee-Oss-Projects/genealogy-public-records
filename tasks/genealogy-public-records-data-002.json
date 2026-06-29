@@ -1,0 +1,38 @@
+{
+  "id": "genealogy-public-records-data-002",
+  "title": "Integrate >=3 more approved sources; scale to >=5,000 deceased persons",
+  "project": "genealogy-public-records",
+  "type": "data",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "data-pipeline"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "M1 proved the pipeline with one census batch. M3 scales by integrating at least 3 additional approved public-domain source collections (e.g., NARA immigration/naturalization records, military service/pension files, Chronicling America obituaries) to reach at least 5,000 deceased-only sourced Person records. Each new source must pass the full license and privacy gate before extraction begins. All M1 quality guarantees — 100% provenance, 100% evidence rationale, deceased-only, fresh citation audit >=95%, fresh deceased audit 100%/zero living — must be maintained across the expanded corpus.",
+  "objective": "Integrate at least 3 additional approved public-domain source collections into the corpus, running each through the full extraction pipeline, to reach at least 5,000 deceased-only sourced Person records with 100% provenance, 100% evidence rationale, a fresh stratified citation audit still >=95%, and a fresh deceased-determination audit still 100%/zero living.",
+  "acceptanceCriteria": [
+    "At least 3 new source collections integrated (beyond the M1 census batch), each with an approved sources/allowlist.yml entry before extraction began.",
+    "Total corpus reaches at least 5,000 deceased-only sourced Person records across all integrated sources.",
+    "100% of assertions across all new sources carry a resolvable page/image-level provenance link and a GPS evidence rationale.",
+    "A fresh stratified citation audit (min 200 assertions per new source; independent auditor) still achieves >=95% pass rate.",
+    "A fresh deceased-determination audit across the expanded corpus confirms 100% correct classification, zero living persons.",
+    "All new source integrations pass all CI gates before PR submission.",
+    "Integration summary committed with: source list, per-source record counts, deceased/excluded/suppressed totals, and fresh audit results."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-recon-002.json",
+    "tasks/genealogy-public-records-license-002.json",
+    "https://catalog.archives.gov/",
+    "https://chroniclingamerica.loc.gov/",
+    "https://www.archives.gov/research/immigration",
+    "https://www.archives.gov/research/military"
+  ],
+  "output": "corpus/ directory expanded with >=3 new source batch subdirectories; integration-summary.md updated, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

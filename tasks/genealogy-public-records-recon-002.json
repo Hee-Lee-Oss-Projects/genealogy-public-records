@@ -1,0 +1,34 @@
+{
+  "id": "genealogy-public-records-recon-002",
+  "title": "Human-reviewed duplicate-merge workflow (precision-first)",
+  "project": "genealogy-public-records",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["genealogy", "family-history", "linked-data", "open-history", "public-data"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The Wikidata reconciliation pass (recon-001) produced a candidate-match worklist requiring human review. Conflating two different real people is both a data error and a privacy risk, so no merge ships without human confirmation. This task builds the workflow tooling — a review interface or structured worklist process — through which a reviewer confirms or rejects each candidate match, and implements the merge operation that combines both records' provenance and evidence while remaining reversible and auditable.",
+  "objective": "Build a human-reviewed duplicate-merge workflow that allows a reviewer to confirm or reject each candidate Wikidata and within-corpus match from the recon-001 worklist, executes confirmed merges in a way that preserves all source provenance and evidence from both records, is reversible, and produces a dedup audit report showing zero confirmed false merges in the audit sample.",
+  "acceptanceCriteria": [
+    "No automatic merge ships without human confirmation; each candidate must be explicitly accepted or rejected by a reviewer.",
+    "Blocking-key strategy documented and consistent with recon-001 (no ad-hoc merges outside the strategy).",
+    "Confirmed merges preserve all provenance and evidence from both source records; no data is silently discarded.",
+    "Merges are reversible: a merge can be undone and both original records restored without data loss.",
+    "Dedup audit sample drawn after merge: zero confirmed false merges (two different real people conflated) in the audit sample.",
+    "Each merge is logged with: reviewer identity, date, candidate IDs, decision (accepted/rejected), and rationale.",
+    "pnpm build && pnpm test && pnpm lint pass; workflow tooling committed via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-recon-001.json",
+    "https://www.wikidata.org/"
+  ],
+  "output": "packages/reconciler/src/ (TypeScript/ESM merge workflow tooling) with tests, merge log schema, and dedup audit report template, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

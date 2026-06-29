@@ -1,0 +1,34 @@
+{
+  "id": "genealogy-public-records-partner-002",
+  "title": "Identify & engage >=1 candidate steward for adoption",
+  "project": "genealogy-public-records",
+  "type": "research",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["genealogy", "family-history", "open-history", "community", "education"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Partner-001 initiated outreach to candidate stewards; now that M1 has proven the pipeline with real data, the conversation can be made concrete. A qualifying steward is a non-profit or public-interest organization that publicly hosts or links the corpus, commits to cite it in at least one output, and names a contact who confirms the data met a real need. At least one candidate must be in active conversation by the end of M1, as securing a steward is required for the project to be considered shipped.",
+  "objective": "Follow up on partner-001 outreach, present the M1 corpus extract and GEDCOM exports to at least one candidate steward organization, document the conversation and any commitment or next steps, and update the outreach log with current engagement status.",
+  "acceptanceCriteria": [
+    "At least one candidate steward organization has received a concrete presentation of the M1 corpus (data sample, export formats, license terms, takedown policy).",
+    "Conversation documented: date, participants, corpus sample presented, steward's questions and concerns recorded.",
+    "Any expression of interest, tentative commitment, or outstanding questions documented in the outreach log.",
+    "Outreach log updated to reflect current status of all candidates (contacted, in conversation, declined, interested, committed).",
+    "If no candidate has engaged positively, a revised outreach strategy is proposed (additional candidate types, different framing, seeking an Elyos governance referral).",
+    "Updated outreach log committed as docs/partner-outreach-log.md via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-partner-001.json",
+    "tasks/genealogy-public-records-data-001.json",
+    "tasks/genealogy-public-records-export-001.json"
+  ],
+  "output": "docs/partner-outreach-log.md (updated) — engagement log with M1 presentation details, steward responses, and current status of all candidates, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

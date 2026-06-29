@@ -1,0 +1,33 @@
+{
+  "id": "genealogy-public-records-iri-001",
+  "title": "Commit host-independent persistent IRI namespace (w3id.org/PURL)",
+  "project": "genealogy-public-records",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["genealogy", "family-history", "linked-data", "open-history", "public-data"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Dereferenceable IRIs are assigned to every Person, Fact, Relationship, and SourceDescription entity in the corpus. If those IRIs are minted under a host-controlled domain, they break the moment the host or steward changes — destroying the linked-data value of the corpus. To decouple identifiers from any particular host, the project must register a persistent, host-independent IRI namespace via w3id.org or a PURL service before any data is published. This M0 decision locks in the namespace pattern used by every subsequent extraction and export task.",
+  "objective": "Register a host-independent persistent IRI namespace for the corpus (via w3id.org or a PURL service), define the IRI pattern for core entity types (Person, Fact, Relationship, SourceDescription), document the redirect strategy to the actual serving host, and commit an architecture decision record so all downstream tasks mint IRIs in the approved namespace.",
+  "acceptanceCriteria": [
+    "A host-independent persistent namespace registered and confirmed functional (w3id.org redirect or PURL): the namespace resolves to the corpus and the redirect target is configurable without changing the IRI.",
+    "IRI patterns defined for each core entity type: Person, Name, Fact, Relationship, PlaceReference, SourceDescription, and Evidence/Conclusion nodes.",
+    "Redirect configuration committed to the w3id.org or PURL repository, proving the namespace is under project control, not any single host.",
+    "IRI minting rules documented: format, collision avoidance, and how to add new IRIs in future extraction tasks.",
+    "Architecture decision record published (docs/adr/002-iri-namespace.md) with the chosen namespace, rationale, and redirect strategy, committed via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-profile-001.json",
+    "https://w3id.org/",
+    "https://purl.org/"
+  ],
+  "output": "docs/adr/002-iri-namespace.md — IRI namespace decision record with registered namespace URL, entity IRI patterns, redirect configuration, and minting rules, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

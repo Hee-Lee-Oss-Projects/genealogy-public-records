@@ -1,0 +1,34 @@
+{
+  "id": "genealogy-public-records-docs-001",
+  "title": "Data dictionary + citation/usage guide for consumers",
+  "project": "genealogy-public-records",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "education"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "With the explorer and exports live, downstream consumers — genealogists, historians, educators, data scientists — need clear documentation of what each field means, how to cite the corpus in their own work, how to correctly interpret the provenance and evidence-rationale fields, and what the license terms allow. Without a data dictionary and usage guide, consumers may misuse or miscite the data, undermining the corpus's value and credibility.",
+  "objective": "Write a data dictionary covering every entity type and field in the GEDCOM X-aligned corpus, and a citation/usage guide explaining how consumers should cite the corpus, how to interpret provenance and evidence-rationale fields, what the license terms permit, and how to report errors or request takedowns.",
+  "acceptanceCriteria": [
+    "Data dictionary covers all entity types (Person, Name, Fact, Relationship, PlaceReference, SourceDescription, Evidence/Conclusion) with field names, data types, cardinality, and plain-language descriptions.",
+    "Each field's provenance and evidence-rationale slots explained with a worked example showing how to read a real assertion.",
+    "Citation guide provides: recommended citation format for the corpus as a whole, for individual persons, and for specific assertions; includes version, license, and access date fields.",
+    "Usage guide states what the CC0-1.0 (and any CC BY-SA / CC BY / ODbL) license permits and requires, including attribution obligations where applicable.",
+    "Error-reporting and takedown-request instructions included with a link to the report mechanism.",
+    "Documented in docs/data-dictionary.md and docs/usage-guide.md, committed via PR, with links from the explorer's landing page."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-explorer-001.json",
+    "tasks/genealogy-public-records-profile-001.json",
+    "http://gedcomx.org/"
+  ],
+  "output": "docs/data-dictionary.md and docs/usage-guide.md — data dictionary and citation/usage guide for corpus consumers, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

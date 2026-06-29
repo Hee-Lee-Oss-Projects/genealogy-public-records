@@ -1,0 +1,37 @@
+{
+  "id": "genealogy-public-records-extract-001",
+  "title": "Build NARA census extractor (assistive, flag-on-doubt, method-aware)",
+  "project": "genealogy-public-records",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "public-data", "data-pipeline", "open-history"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "With the CI gates and allow-list in place, the first concrete extraction tool can be built. NARA handwritten census sheets require human transcription (not OCR) as the extraction method because enumerator handwriting varies widely. The extractor must be assistive — it helps a human transcriber record data into the GEDCOM X-aligned schema — never autonomous. Ambiguous or illegible fields must be flagged for review and left as gaps, never guessed. The method used for each field (human-transcription vs. OCR) must be recorded in the provenance block so CI and auditors can verify the per-source extraction-method policy was honored.",
+  "objective": "Build a TypeScript/ESM NARA census extractor that supports human-assisted transcription of census sheets into GEDCOM X-aligned Person/Name/Fact/Relationship/SourceDescription records, enforces the per-source extraction-method policy, records the method in each assertion's provenance block, flags ambiguous/illegible fields for review without guessing, and passes a documented transcription-accuracy baseline before a batch can advance to normalization.",
+  "acceptanceCriteria": [
+    "Extractor produces GEDCOM X-aligned records (Person, Name, Fact, Relationship, SourceDescription) from a NARA census input.",
+    "Per-source extraction-method policy enforced: handwritten census sheets use human-transcription method; the method is recorded in the provenance block of every assertion produced.",
+    "Ambiguous or illegible fields are flagged as 'review-required' and left as explicit gaps; the extractor never guesses or interpolates missing values.",
+    "A documented transcription-accuracy baseline (per-method field-level threshold) gates a batch before normalization; the tool reports whether the batch passes or fails this threshold.",
+    "Every assertion produced carries both a provenance block (source IRI + page/image locator + license + method + confidence) and a placeholder evidence-rationale slot.",
+    "Source must be in sources/allowlist.yml with status 'approved' before the extractor will process it; the tool rejects non-approved sources.",
+    "pnpm build && pnpm test && pnpm lint pass; extractor committed via PR with at least one unit test covering the flag-on-doubt and method-recording behavior."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-ci-001.json",
+    "tasks/genealogy-public-records-license-002.json",
+    "tasks/genealogy-public-records-profile-001.json",
+    "https://catalog.archives.gov/",
+    "https://1950census.archives.gov/"
+  ],
+  "output": "packages/extractor/src/nara-census.ts (TypeScript/ESM extractor) with tests, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "genealogy-public-records-data-003",
+  "title": "Integrate NARA naturalization/immigration batch",
+  "project": "genealogy-public-records",
+  "type": "data",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "immigration"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "NARA holds public-domain immigration and naturalization records (passenger arrival lists, naturalization petitions) that complement census data by documenting individuals' origins and immigration events. These records are federal government works and therefore public domain, but the specific digitization must be verified as NARA-served (not a vendor-wrapped copy) before extraction. This is a backlog task sized for post-M3 once the core pipeline and sources are stable.",
+  "objective": "Verify the license and privacy status of a specific NARA-served naturalization or immigration record collection, add it to sources/allowlist.yml with both reviewer sign-offs, and integrate one approved batch into the corpus using the established extraction pipeline with 100% provenance and evidence rationale.",
+  "acceptanceCriteria": [
+    "A specific NARA-served naturalization or immigration record collection (not a Fold3/Ancestry copy) identified and entered in sources/allowlist.yml with both license and privacy reviewer sign-offs.",
+    "Privacy-embargo determination recorded: records confirmed to cover deceased persons only (100-year rule or positive death evidence applied).",
+    "At least one batch extracted and normalized to GEDCOM X Person/Name/Fact/Relationship/SourceDescription records.",
+    "100% of new assertions carry provenance and evidence rationale.",
+    "All CI gates pass (SHACL + provenance + evidence + no-SSN/DMF/genetic + deceased-only + allow-list).",
+    "Batch committed to corpus/ via PR with an extraction summary."
+  ],
+  "resources": [
+    "PLAN.md",
+    "https://www.archives.gov/research/immigration",
+    "https://www.archives.gov/research/naturalization",
+    "https://catalog.archives.gov/"
+  ],
+  "output": "corpus/nara-naturalization-<batch-id>/ — extracted batch of NARA naturalization/immigration records, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

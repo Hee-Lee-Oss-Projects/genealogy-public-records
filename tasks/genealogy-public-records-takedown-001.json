@@ -1,0 +1,34 @@
+{
+  "id": "genealogy-public-records-takedown-001",
+  "title": "Operationalize + test living-person takedown path end-to-end",
+  "project": "genealogy-public-records",
+  "type": "maintenance",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "privacy", "public-data", "policy"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "The living-person takedown workflow was documented in privacy-001 and the explorer is now live. The workflow must be operationalized — a real report mechanism exists and is linked from the explorer — and tested end-to-end using a synthetic living-person inclusion to verify the <=72h SLA can be met. Any confirmed living-person publication is a P0 incident requiring immediate export pull, so the path must be fast, reliable, and logged without re-publishing PII.",
+  "objective": "Operationalize the living-person takedown path by adding a report mechanism to the explorer, testing the full report-to-removal flow end-to-end with a synthetic living-person inclusion, confirming the <=72h SLA is achievable, and committing a post-exercise report documenting any gaps found and remediated.",
+  "acceptanceCriteria": [
+    "A low-friction report mechanism is available on the explorer (e.g., a clearly labelled link or form) and documented in the project README.",
+    "A synthetic living-person record is injected into a test environment and a takedown report filed through the live report mechanism.",
+    "The report-to-removal flow is exercised end-to-end: report received, verified, record removed from corpus and exports, removal logged without re-publishing PII.",
+    "End-to-end elapsed time measured and confirmed achievable within <=72h SLA under realistic conditions.",
+    "Source batch re-audited after synthetic removal to confirm no other synthetic or real living-person records remain.",
+    "Post-exercise report documents: time at each step, any friction points found, and any remediation actions taken.",
+    "Post-exercise report committed as docs/takedown-test-report.md via PR; report mechanism linked from explorer."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-explorer-001.json",
+    "tasks/genealogy-public-records-privacy-001.json"
+  ],
+  "output": "docs/takedown-test-report.md — end-to-end takedown test report with timeline, gaps found, and remediation actions, committed via PR; takedown report mechanism live on the explorer.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

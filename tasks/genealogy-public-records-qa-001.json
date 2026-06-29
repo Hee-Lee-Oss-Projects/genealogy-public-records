@@ -1,0 +1,35 @@
+{
+  "id": "genealogy-public-records-qa-001",
+  "title": "Citation + GPS-rationale audit of M1 batch (>=95% verified)",
+  "project": "genealogy-public-records",
+  "type": "research",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "quality-assurance"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "CI gates verify structural completeness of provenance and evidence-rationale fields but cannot verify that the citation actually points to the stated source or that the GPS rationale is sound genealogical reasoning. A human citation audit is required: an auditor independent of the extractor samples assertions stratified by source batch and extraction method, checks each citation against the actual source document, and verifies the GPS evidence rationale is consistent with what the source actually says. The target pass rate is >=95%; any failure blocks sign-off and must be root-caused.",
+  "objective": "Conduct a stratified citation and GPS-rationale audit of the M1 batch, sampling at least 200 assertions (or the full batch if smaller) with strata defined by source batch and extraction method, verify each sampled assertion against the cited source document, and report the pass rate with all failures documented and root-caused.",
+  "acceptanceCriteria": [
+    "Auditor is independent of the extractor (no self-grading).",
+    "Sample of at least 200 assertions drawn from the M1 batch, stratified by source batch and extraction method.",
+    "Each sampled assertion checked against the cited NARA source document: citation resolves to the correct page/image, the recorded data matches what the source actually states, and the GPS evidence rationale is consistent with the source.",
+    "Pass rate calculated and reported; target is >=95%.",
+    "All failures documented with: assertion ID, what the source actually says vs. what was recorded, root cause (transcription error, mis-citation, unsound rationale, or other).",
+    "Any failure rate below 95% is a blocking sign-off issue requiring root-cause analysis and a batch re-audit plan before M1 can exit.",
+    "Audit report committed as review/qa-001-citation-audit.md with methodology, sample frame, results table, and any remediation actions, via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-data-001.json",
+    "https://catalog.archives.gov/",
+    "https://1950census.archives.gov/"
+  ],
+  "output": "review/qa-001-citation-audit.md — stratified citation + GPS-rationale audit report with methodology, sample frame, pass rate, failure log, and remediation plan if needed, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}
