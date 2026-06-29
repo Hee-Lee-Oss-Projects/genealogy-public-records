@@ -1,0 +1,34 @@
+{
+  "id": "genealogy-public-records-partner-001",
+  "title": "Steward + sensitive-records community-advisor outreach",
+  "project": "genealogy-public-records",
+  "type": "research",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["genealogy", "family-history", "open-history", "community", "education"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "The Elyos 'delivered, not merged' bar requires a named educational/historical/heritage steward that adopts, hosts, and cites the corpus before the project is considered shipped. Additionally, the sensitive-records track (enslavement-era and Indigenous records) requires a community advisor from a descendant community before that data can be extracted. Both seats are currently unstaffed, which blocks the project's final delivery and the sensitive-records track respectively. Outreach must begin in M0 so conversations are in progress by M1.",
+  "objective": "Identify and initiate outreach to at least three candidate steward organizations (public libraries with genealogy special collections, university digital-humanities centers, state archives, genealogical societies, or African-American/Indigenous heritage organizations) and at least one candidate sensitive-records community advisor, documenting outreach status and any responses received.",
+  "acceptanceCriteria": [
+    "At least 3 candidate steward organizations identified with rationale for why each qualifies (non-profit or public-interest, can publicly host or link the corpus, has a named contact).",
+    "At least 1 candidate sensitive-records community advisor identified from a descendant community (African-American genealogy/heritage organization or Indigenous data-governance body) relevant to enslavement-era and Indigenous US records.",
+    "Outreach initiated to all identified candidates; initial contact documented (date, channel, message summary).",
+    "Outreach status log committed as docs/partner-outreach-log.md with a table: organization, contact, date, channel, status (contacted/responded/declined/interested), and any response summary.",
+    "Minimum steward criteria documented (per PLAN.md: non-profit or public-interest; commits to publicly host or link; cites in at least one output; names a confirming contact; a lone individual or commercial reuser does not qualify)."
+  ],
+  "resources": [
+    "PLAN.md",
+    "https://www.familysearch.org/",
+    "https://www.ngsgenealogy.org/",
+    "https://www.aahgs.org/",
+    "https://www.ncai.org/"
+  ],
+  "output": "docs/partner-outreach-log.md — outreach status log with candidate list, contacts, dates, and response summaries, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

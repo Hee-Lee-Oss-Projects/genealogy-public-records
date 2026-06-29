@@ -1,0 +1,37 @@
+{
+  "id": "genealogy-public-records-export-001",
+  "title": "GEDCOM 7 + GEDCOM X JSON + JSON-LD export tooling",
+  "project": "genealogy-public-records",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "linked-data", "open-history", "public-data"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The corpus is built in the GEDCOM X conceptual model, but downstream consumers need interoperable export formats: GEDCOM 7 for compatibility with existing genealogy tools, GEDCOM X JSON for programmatic access, and JSON-LD for integration with the broader linked-data web. All exports must use the host-independent persistent IRI namespace committed in M0, include license metadata, and be versioned so downstream consumers can track changes. Exports are produced under CC0-1.0 where derived purely from public-domain sources.",
+  "objective": "Build TypeScript/ESM export tooling that produces GEDCOM 7, GEDCOM X JSON, and JSON-LD outputs from the corpus, using the registered persistent-IRI namespace for all entity references, including license metadata in each export, and versioning exports so downstream consumers can detect updates.",
+  "acceptanceCriteria": [
+    "Exports GEDCOM 7 files that open correctly in at least one GEDCOM 7-compatible tool (e.g., GRAMPS or equivalent).",
+    "Exports GEDCOM X JSON files conforming to the GEDCOM X JSON serialization specification.",
+    "Exports JSON-LD files using the registered persistent-IRI namespace for all entity IRIs and including schema.org/Wikidata context mappings.",
+    "All three exports include license metadata per dataset (CC0-1.0 for PD-derived data; other licenses noted where mixed derivations apply).",
+    "Exports are versioned (release tag and date included in export metadata) so consumers can detect updates.",
+    "Exports reference the persistent-IRI namespace (not a host-specific URL) for all entity identifiers.",
+    "pnpm build && pnpm test && pnpm lint pass; export tooling committed via PR with at least one integration test validating the output of each format against the M1 batch."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-data-001.json",
+    "tasks/genealogy-public-records-iri-001.json",
+    "https://www.gedcom.org/",
+    "http://gedcomx.org/",
+    "https://www.w3.org/TR/json-ld11/"
+  ],
+  "output": "packages/exporter/src/ (TypeScript/ESM export modules for GEDCOM 7, GEDCOM X JSON, and JSON-LD) with tests, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

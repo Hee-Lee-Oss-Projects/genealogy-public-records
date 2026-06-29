@@ -1,0 +1,34 @@
+{
+  "id": "genealogy-public-records-gazetteer-001",
+  "title": "Historic place gazetteer (Wikidata CC0 / GeoNames CC BY)",
+  "project": "genealogy-public-records",
+  "type": "data",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["genealogy", "family-history", "linked-data", "open-history", "geography"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "PlaceReference nodes in the corpus link persons and events to specific locations, but many places named in historical US records (counties, townships, towns) have changed names or boundaries since the record was created. A gazetteer mapping historical place names to modern equivalents and to Wikidata QIDs/GeoNames IDs makes the corpus queryable by location and interoperable with other linked-data datasets. Wikidata (CC0) is preferred for place QIDs; GeoNames (CC BY 4.0) may be used for additional coordinate data, requiring attribution. OpenStreetMap (ODbL) is used only if needed and requires share-alike labeling of any derived place set.",
+  "objective": "Build a historic place gazetteer covering the locations named in the M1 corpus batch, mapping historical place names to Wikidata QIDs and optionally GeoNames IDs, including administrative hierarchy (county, state) and approximate modern equivalents, under CC0-1.0 where derived purely from Wikidata, or CC-BY-4.0 where GeoNames data is incorporated.",
+  "acceptanceCriteria": [
+    "Gazetteer covers all unique PlaceReference values in the M1 (and ideally M3) corpus batch.",
+    "Each entry maps a historical place name to a Wikidata QID (where one exists) and documents the administrative hierarchy (township/county/state).",
+    "Modern equivalent name noted where the historical place name has changed.",
+    "Where GeoNames data is used, CC BY 4.0 attribution is recorded in the gazetteer and the derived dataset is labeled CC-BY-4.0, not CC0.",
+    "OpenStreetMap data is not used unless strictly necessary; if used, the derived place set is labeled ODbL and documented separately.",
+    "Gazetteer published as a machine-readable dataset (JSON or YAML) under the appropriate license, committed to gazetteer/ via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "https://www.wikidata.org/",
+    "https://www.geonames.org/",
+    "https://www.openstreetmap.org/copyright"
+  ],
+  "output": "gazetteer/historic-places.json — machine-readable historic place gazetteer with Wikidata QIDs, GeoNames IDs where applicable, and license metadata, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC-BY-4.0"
+}

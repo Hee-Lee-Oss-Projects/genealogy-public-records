@@ -1,0 +1,37 @@
+{
+  "id": "genealogy-public-records-sensitive-001",
+  "title": "Pilot enslavement-era/Indigenous records (dignity + CARE + community advisor)",
+  "project": "genealogy-public-records",
+  "type": "data",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "community"],
+  "riskTier": "high",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "US public-domain records include 1850/1860 census slave schedules and Freedmen's Bureau records documenting enslaved people, and Indigenous agency/allotment rolls documenting Indigenous communities. These sources are flagged 'sensitive' in the allow-list and require a community advisor from a descendant community before any extraction begins. The CARE principles (Collective benefit, Authority to control, Responsibility, Ethics) apply. Individuals are documented as persons with dignity and historical context, never as undifferentiated rows. The community advisor's sign-off is a hard gate, and non-publication or special handling is honored if the community requests it.",
+  "objective": "Pilot extraction of one enslavement-era or Indigenous-related public-domain record set — with a named community advisor engaged and signed off, CARE principles applied, dignity-first presentation of individuals, and explicit provisions for non-publication or special handling at the community's request — producing a small pilot dataset demonstrating the sensitive-records track.",
+  "acceptanceCriteria": [
+    "A named community advisor from a descendant community (African-American genealogy/heritage organization for enslavement-era records, or an Indigenous data-governance body for Indigenous records) is engaged and signs off before extraction begins.",
+    "CARE principles applied: the community advisor reviews the extraction plan, presentation framing, and proposed handling before any data is committed.",
+    "Enslaved individuals documented as persons with dignity and historical context; enslavement recorded as a sourced historical fact about a system, not as a dehumanizing label or identifier.",
+    "Non-publication or special handling honored if the community requests it for any subset of records.",
+    "Pilot dataset passes all CI gates (SHACL + provenance + evidence + no-SSN/DMF/genetic + deceased-only + allow-list + sensitivity-flag checks).",
+    "Community advisor sign-off documented and committed alongside the pilot dataset.",
+    "Post-pilot reflection document records: what handling decisions were made, what the community advisor requested, and lessons for the sensitive-records track going forward."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-data-002.json",
+    "tasks/genealogy-public-records-partner-001.json",
+    "https://www.archives.gov/research/african-americans/freedmens-bureau",
+    "https://www.archives.gov/research/native-americans",
+    "https://www.gida-global.org/care"
+  ],
+  "output": "corpus/sensitive-pilot/ — pilot dataset from one enslavement-era or Indigenous source, community advisor sign-off document, and docs/sensitive-records-reflection.md, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

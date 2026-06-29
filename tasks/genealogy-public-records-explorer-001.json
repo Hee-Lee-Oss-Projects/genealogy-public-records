@@ -1,0 +1,36 @@
+{
+  "id": "genealogy-public-records-explorer-001",
+  "title": "No-account public explorer (every assertion shows source + rationale)",
+  "project": "genealogy-public-records",
+  "type": "code",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "education"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The corpus's public benefit depends on it being browsable without a subscription or account. The explorer must surface the corpus's core trust proposition: for every assertion about a person, the source citation and GPS evidence rationale are visible alongside the data. This transforms the corpus from a downloadable blob into an auditable, citable resource. The explorer must require no visitor account, collect no visitor PII, meet WCAG 2.1 AA accessibility standards, link to raw exports, and display license information per dataset.",
+  "objective": "Build a static-site public explorer over the GEDCOM X JSON exports that allows browsing by Person, displaying names, facts, relationships, and places, and for every assertion shows its source citation and GPS evidence rationale, with no account required, no visitor PII collected, WCAG 2.1 AA accessibility, and links to raw exports with per-dataset license information.",
+  "acceptanceCriteria": [
+    "A user can browse to a Person page and see: all names, all facts (with dates and places where evidenced), relationships, and place references.",
+    "Every assertion on the Person page displays its source citation (document title, page/image link, custodian) and GPS evidence rationale alongside the data value.",
+    "No account or login is required to browse any page.",
+    "No visitor PII is collected; no cookies beyond those strictly necessary for static serving; no third-party analytics tracking.",
+    "Meets WCAG 2.1 AA: keyboard navigable, semantic HTML, sufficient color contrast, meaningful alt text for any images.",
+    "Each page links to the raw GEDCOM 7, GEDCOM X JSON, and JSON-LD exports for download.",
+    "License information displayed per dataset (CC0-1.0 for PD-derived; other licenses noted where applicable).",
+    "pnpm build && pnpm test && pnpm lint pass; explorer committed via PR with a demo build over the M1 batch."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-export-001.json",
+    "https://www.w3.org/WAI/WCAG21/quickref/",
+    "http://gedcomx.org/"
+  ],
+  "output": "packages/explorer/ — static-site explorer source (TypeScript/ESM + static build output) deployable over the GEDCOM X JSON exports, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

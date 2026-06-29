@@ -1,0 +1,34 @@
+{
+  "id": "genealogy-public-records-prov-001",
+  "title": "Ratify provenance+evidence mechanism + define countable assertion unit",
+  "project": "genealogy-public-records",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "linked-data", "provenance", "public-data"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Every assertion in the corpus must carry both a provenance citation (page/image-level link to the public-custodian source) and a GPS evidence rationale. The CI gates are defined in terms of a 'countable assertion unit' — the atomic record over which 100% provenance and 100% evidence-rationale completeness are measured. The mechanism for attaching provenance and evidence to assertions (named graphs + PROV-O reification vs. RDF-star) must be chosen and applied uniformly; this decision locks in what the CI gates actually count and cannot be changed mid-project without a migration.",
+  "objective": "Evaluate named-graphs-plus-PROV-O reification versus RDF-star for binding provenance and evidence rationale to assertions, select one approach, define the countable assertion unit precisely (the atomic RDF statement or named-graph identifier the CI gates will enumerate), and publish the ratified decision as a short architecture decision record.",
+  "acceptanceCriteria": [
+    "Two candidate mechanisms evaluated (named graphs + PROV-O vs. RDF-star): pros/cons documented for tooling support, expressiveness, and CI measurability.",
+    "One mechanism selected and ratified; the decision is binding for the project lifetime (changes require a versioned ADR and migration plan).",
+    "The countable assertion unit defined precisely: what constitutes one assertion, how it is identified, and how the CI gate enumerates and checks it for provenance and evidence-rationale completeness.",
+    "A worked example shows one real assertion (e.g., a birth-year Fact from a census record) encoded in the chosen mechanism with both the provenance block and the GPS evidence rationale attached.",
+    "Published as an architecture decision record (docs/adr/001-provenance-mechanism.md) committed via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-profile-001.json",
+    "https://www.w3.org/TR/prov-o/",
+    "https://www.w3.org/2022/08/rdf-star-wg-charter",
+    "https://www.gedcom.org/"
+  ],
+  "output": "docs/adr/001-provenance-mechanism.md — architecture decision record ratifying the provenance+evidence mechanism and defining the countable assertion unit with a worked example, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

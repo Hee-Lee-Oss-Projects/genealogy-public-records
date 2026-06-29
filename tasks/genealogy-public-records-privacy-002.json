@@ -1,0 +1,35 @@
+{
+  "id": "genealogy-public-records-privacy-002",
+  "title": "Deceased-determination engine + living-relative suppression",
+  "project": "genealogy-public-records",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "privacy", "public-data", "data-pipeline"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Before any person record can enter the corpus, the deceased-determination engine must classify them according to the ratified policy v1. Anyone not provably deceased is excluded. Census records frequently name living relatives (children, spouses) who must be suppressed even when the primary subject is deceased. Any prohibited field (SSN, Death Master File, genetic/DNA) must be stripped before persistence, and the engine must emit an auditable report of every decision — inclusions, exclusions, suppressions, and field-strips — so the downstream deceased-determination audit can independently verify the results.",
+  "objective": "Implement a TypeScript/ESM deceased-determination engine that applies the ratified policy v1 to classify each candidate person record (deceased/living/unknown), suppresses individuals who may be living (e.g., children enumerated on a recent census), strips any prohibited field (SSN/DMF/genetic) before persistence, and emits a structured auditable report of every classification decision.",
+  "acceptanceCriteria": [
+    "Implements the ratified deceased-determination rule: admits a person if positive death evidence exists or documented birth >=100 years ago; excludes all others.",
+    "Applies the decision table for edge cases: age-only records implying living status, unknown birth/death, mixed records with possibly-living relatives all default to exclusion.",
+    "Suppresses individuals enumerated in a record who may be living (e.g., children on a 1950 census) without suppressing the deceased primary subject.",
+    "Strips any SSN, Death Master File / SSDI, or genetic/DNA field before a record is persisted; emits an auditable strip-log entry for each removed field.",
+    "Emits a structured per-record audit report (JSON or YAML) recording: person ID, classification (deceased/excluded/suppressed), evidence used, and the policy rule applied.",
+    "Anyone not provably deceased is excluded; the exclusion is logged and never silently dropped.",
+    "pnpm build && pnpm test && pnpm lint pass; engine committed via PR with unit tests covering each edge case in the decision table."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-extract-001.json",
+    "tasks/genealogy-public-records-privacy-001.json",
+    "https://www.archives.gov/research/census/1950"
+  ],
+  "output": "packages/extractor/src/deceased-determination.ts (TypeScript/ESM engine) with unit tests and a sample audit-report schema, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

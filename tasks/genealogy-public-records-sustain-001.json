@@ -1,0 +1,34 @@
+{
+  "id": "genealogy-public-records-sustain-001",
+  "title": "Sustainability plan (hosting + permanent takedown + reviewer rotation/throughput)",
+  "project": "genealogy-public-records",
+  "type": "writing",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "maintenance"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Shipped is not the same as maintained. After the steward adopts the corpus, a sustainability plan is needed to ensure the takedown path stays open indefinitely, reviewer capacity does not silently degrade, the persistent IRI namespace remains redirected, and the corpus continues to receive the occasional source addition or correction. Without a documented sustainability plan, the project risks orphaned identifiers, a silently broken takedown path, and reviewer burnout that allows quality or privacy gates to erode.",
+  "objective": "Write a sustainability plan covering long-term hosting and IRI persistence (under the registered w3id.org/PURL namespace), the permanent takedown path (<=72h SLA, indefinitely maintained), reviewer rotation with a documented response-time SLA, a throughput ceiling that throttles new intake when the review backlog exceeds it, and a quarterly outcome-reporting cadence.",
+  "acceptanceCriteria": [
+    "Hosting plan documented: where the corpus is served, who controls the w3id.org/PURL redirect, and how identifiers survive a steward change.",
+    "Takedown path confirmed permanently open: the report mechanism URL, responsible party, and <=72h SLA are documented and owned by a named role (not a single person).",
+    "Reviewer rotation plan documented: how license, privacy, and accuracy reviewers are recruited/rotated, with a response-time SLA and a minimum reviewer count.",
+    "Throughput ceiling defined: the maximum new-record intake rate at which the review backlog remains manageable; intake is throttled if the backlog exceeds this ceiling.",
+    "Quarterly outcome-reporting cadence committed: what is reported (person count, provenance/evidence completeness, deceased audit, citation audit, takedown SLA, steward adoptions, reuse downloads), when, and by whom.",
+    "Sustainability plan committed as docs/sustainability-plan.md via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-partner-003.json",
+    "tasks/genealogy-public-records-takedown-001.json",
+    "tasks/genealogy-public-records-metrics-001.json"
+  ],
+  "output": "docs/sustainability-plan.md — sustainability plan covering hosting, IRI persistence, takedown, reviewer rotation, throughput ceiling, and quarterly reporting, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

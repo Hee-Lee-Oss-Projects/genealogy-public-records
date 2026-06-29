@@ -1,0 +1,35 @@
+{
+  "id": "genealogy-public-records-recon-001",
+  "title": "Wikidata reconciliation pass (propose QID/place matches)",
+  "project": "genealogy-public-records",
+  "type": "data",
+  "lane": "donated",
+  "priority": "medium",
+  "domain": ["genealogy", "family-history", "linked-data", "open-history", "public-data"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Reconciling persons and places against Wikidata (CC0) makes the corpus part of the linked-data web and enables downstream tools to join it with other datasets. However, reconciliation carries a privacy risk: incorrectly matching two different real people is both a data error and a potential privacy violation. The reconciliation pass must be precision-first — it proposes candidate matches with confidence scores but never merges automatically. All proposed matches go to a human review worklist before any merge is applied. Place matching similarly proposes Wikidata QIDs for PlaceReference nodes but does not auto-apply.",
+  "objective": "Run a Wikidata reconciliation pass over the M1 corpus persons and places, generating a candidate-match worklist with blocking keys, confidence scores, and match evidence for each proposed pairing, ready for human review in the recon-002 task.",
+  "acceptanceCriteria": [
+    "Reconciliation uses an explicit blocking-key strategy (e.g., normalized surname + birth-decade + birthplace region for persons; normalized place name + administrative hierarchy for places).",
+    "Matcher tuned for precision over recall: only high-confidence candidates are surfaced; low-confidence candidates are flagged as 'uncertain' rather than promoted.",
+    "Output is a structured candidate-match worklist (JSON or YAML) with: corpus entity ID, proposed Wikidata QID, confidence score, blocking keys matched, and supporting evidence snippet.",
+    "No automatic merges applied; all candidates go to the human review worklist.",
+    "Wikidata source data used is CC0 (Wikidata labels/statements); the derived reconciliation dataset is labeled CC0-1.0.",
+    "Candidate-match worklist committed to reconciliation/candidates/ via PR with a summary of total candidates, confidence distribution, and any obvious false-positive patterns observed."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-data-001.json",
+    "https://www.wikidata.org/",
+    "https://www.wikidata.org/wiki/Wikidata:Tools/OpenRefine",
+    "https://reconciliation-api.github.io/specs/latest/"
+  ],
+  "output": "reconciliation/candidates/<batch-id>-wikidata-candidates.json — structured candidate-match worklist for human review, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

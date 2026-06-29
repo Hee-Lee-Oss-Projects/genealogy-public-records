@@ -1,0 +1,37 @@
+{
+  "id": "genealogy-public-records-data-001",
+  "title": "Extract one approved NARA census batch -> corpus (provenance + evidence)",
+  "project": "genealogy-public-records",
+  "type": "data",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "data-pipeline"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "large",
+  "status": "open",
+  "context": "This is the proof-of-pipeline task for M1: taking one approved NARA census batch through the full extraction, deceased-determination, normalization, and provenance/evidence-binding pipeline to produce the first real corpus records. The batch must use a NARA-served digitization (not a Fold3/Ancestry copy) with the 72-year rule satisfied. Every person must pass the deceased-determination engine. Every assertion must carry a resolvable page/image-level provenance citation and a GPS evidence rationale. Conflicting source statements (e.g., disagreeing ages across census years) must be retained with separate provenance rather than flattened.",
+  "objective": "Run one approved NARA census batch through the full extraction pipeline (extractor + deceased-determination engine + normalization + provenance/evidence binding) to produce GEDCOM X-aligned Person/Name/Fact/Relationship/Source records in the corpus, with 100% provenance and 100% evidence rationale on every assertion, passing all CI gates before review.",
+  "acceptanceCriteria": [
+    "Records from one approved NARA census batch (NARA-served; 72-year rule satisfied; allow-list status 'approved') mapped to Person/Name/Fact/Relationship/SourceDescription nodes in the corpus.",
+    "100% of new assertions carry a resolvable page/image-level provenance link to the NARA-served source document.",
+    "100% of new assertions carry a GPS evidence rationale (Conclusion note recording what supports the assertion and how any conflict was resolved).",
+    "Conflicting source statements (e.g., disagreeing ages across census records) retained with separate provenance entries; no single-winner conclusion without a sourced rationale.",
+    "All persons in the batch pass the deceased-determination engine; zero living persons are admitted.",
+    "Passes all CI gates (SHACL + provenance + evidence + no-SSN/DMF/genetic + deceased-only + allow-list) before the PR is submitted for review.",
+    "Batch committed to corpus/ via PR with an extraction summary documenting: source, record count, deceased/excluded/suppressed counts, and CI gate results."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-extract-001.json",
+    "tasks/genealogy-public-records-privacy-002.json",
+    "tasks/genealogy-public-records-ci-001.json",
+    "https://catalog.archives.gov/",
+    "https://1950census.archives.gov/"
+  ],
+  "output": "corpus/<batch-id>/ directory containing GEDCOM X JSON records for the extracted batch plus an extraction-summary.md, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

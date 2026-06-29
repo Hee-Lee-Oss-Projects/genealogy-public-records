@@ -1,0 +1,31 @@
+{
+  "id": "genealogy-public-records-metrics-001",
+  "title": "Reuse-metrics tracking (downloads/queries)",
+  "project": "genealogy-public-records",
+  "type": "maintenance",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "metrics"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "PLAN.md tracks reuse (external downloads/queries of exports) as a success metric, reported quarterly from M2 onward. A lightweight, privacy-respecting mechanism is needed to count downloads of the GEDCOM 7, GEDCOM X JSON, and JSON-LD exports without collecting visitor PII. The metrics are used to demonstrate real-world uptake to candidate stewards and in quarterly outcome reports.",
+  "objective": "Define and implement a lightweight, privacy-respecting reuse-metrics approach for tracking export downloads and (if a query endpoint is added) query counts, without collecting visitor PII, and document the methodology and reporting cadence.",
+  "acceptanceCriteria": [
+    "Metrics approach chosen and documented: collects download/query counts without collecting visitor IP addresses, user agents beyond aggregated counts, or other PII.",
+    "Metrics collected for each export format (GEDCOM 7, GEDCOM X JSON, JSON-LD) individually.",
+    "Metrics reporting cadence defined: quarterly report template committed to docs/metrics-template.md.",
+    "First metrics baseline recorded after M2 explorer launch (even if zero downloads).",
+    "Implementation committed (configuration or lightweight script) via PR with documentation in docs/metrics-methodology.md."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-explorer-001.json"
+  ],
+  "output": "docs/metrics-methodology.md (methodology and privacy stance) and docs/metrics-template.md (quarterly report template), committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

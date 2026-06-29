@@ -1,0 +1,34 @@
+{
+  "id": "genealogy-public-records-data-004",
+  "title": "Integrate Chronicling America obituaries (OCR, PD titles)",
+  "project": "genealogy-public-records",
+  "type": "data",
+  "lane": "donated",
+  "priority": "low",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "journalism"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "dataset",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "Chronicling America (Library of Congress / NEH) hosts public-domain historic newspaper issues with OCR text, making obituaries and death notices a potential source of birth, death, and relationship facts for the corpus. However, not all titles in Chronicling America are public domain — rights vary per title and per date range — so each title used must be individually verified as PD before extraction. OCR quality also varies and must be evaluated per title; the extraction method (OCR) must be recorded in provenance. This is a backlog task for post-M3.",
+  "objective": "Identify at least one Chronicling America newspaper title whose selected issues are confirmed public domain, verify the per-title rights, add it to sources/allowlist.yml with both reviewer sign-offs, and extract a batch of obituary-derived Person/Fact records into the corpus with OCR noted as the extraction method in provenance.",
+  "acceptanceCriteria": [
+    "At least one Chronicling America title and date range confirmed public domain (per-title rights analysis, not assumed from the aggregator); entry added to sources/allowlist.yml with both license and privacy reviewer sign-offs.",
+    "OCR extraction method recorded in the provenance block of every assertion produced from this source.",
+    "Transcription-accuracy baseline applied for OCR: ambiguous or low-confidence OCR fields flagged for review, never silently accepted.",
+    "Deceased-determination applied: persons admitted only if classified deceased under the ratified policy.",
+    "100% of new assertions carry provenance (Chronicling America page/image URL) and evidence rationale.",
+    "All CI gates pass before PR submission.",
+    "Batch committed to corpus/ via PR with per-title rights analysis in the allow-list entry."
+  ],
+  "resources": [
+    "PLAN.md",
+    "https://chroniclingamerica.loc.gov/",
+    "https://www.loc.gov/collections/chronicling-america/about-this-collection/rights-and-access/"
+  ],
+  "output": "corpus/chronicling-america-<title>-<date-range>/ — extracted batch of obituary records, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

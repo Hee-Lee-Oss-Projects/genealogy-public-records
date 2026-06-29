@@ -1,0 +1,38 @@
+{
+  "id": "genealogy-public-records-ci-001",
+  "title": "CI gates: SHACL + provenance + evidence + no-SSN/DMF/genetic + deceased-only + allow-list",
+  "project": "genealogy-public-records",
+  "type": "code",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "public-data", "ci-cd", "privacy"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "pr",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "The corpus's integrity rests on six invariants that must never be violated in any published release: (1) every assertion carries a resolvable provenance citation, (2) every assertion carries a GPS evidence rationale, (3) no SSN/DMF/genetic field is present, (4) every person is classified as deceased, (5) every cited source is on the approved allow-list, and (6) all data conforms to the SHACL shapes derived from the GEDCOM X profile. These gates must be automated and enforced in CI so that no extraction task can accidentally bypass them. The CI pipeline must fail loudly on any violation rather than silently passing.",
+  "objective": "Scaffold a CI pipeline (GitHub Actions or equivalent) that runs all six gates on every PR touching the corpus: SHACL validation against the profile shapes, 100% provenance completeness check, 100% evidence-rationale presence check, prohibited-field scanner (SSN/DMF/genetic), deceased-only classifier check, and allow-list-only source check.",
+  "acceptanceCriteria": [
+    "CI fails on any assertion that lacks a resolvable provenance link (source IRI + page/image locator).",
+    "CI fails on any assertion that lacks a GPS evidence rationale.",
+    "CI fails on any record containing an SSN, Death Master File / SSDI field, or genetic/DNA data field.",
+    "CI fails on any person record not classified as deceased by the deceased-determination policy.",
+    "CI fails on any assertion citing a source not marked 'approved' in sources/allowlist.yml.",
+    "CI runs SHACL validation against the GEDCOM X profile shapes and fails on any SHACL violation.",
+    "All six gates run on every PR that modifies files under data/, output/, or corpus/; a green CI run is required before any such PR can merge.",
+    "CI scaffold committed with a passing run on the (empty) corpus, demonstrating all gates execute without errors on a valid empty state, via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-profile-001.json",
+    "tasks/genealogy-public-records-prov-001.json",
+    "tasks/genealogy-public-records-privacy-001.json",
+    "https://www.w3.org/TR/shacl/",
+    "https://docs.github.com/en/actions"
+  ],
+  "output": ".github/workflows/ci.yml plus supporting linter/validator scripts (scripts/validate-provenance.ts, scripts/check-privacy.ts, scripts/check-allowlist.ts), committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "MIT"
+}

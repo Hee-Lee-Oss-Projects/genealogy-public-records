@@ -1,0 +1,36 @@
+{
+  "id": "genealogy-public-records-license-002",
+  "title": "Analyze & record first 3 candidate sources (>=1 approved NARA census)",
+  "project": "genealogy-public-records",
+  "type": "research",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "licensing"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "With the allow-list schema defined, the first concrete source analyses can be performed. At least one NARA federal census must be analyzed and approved as a hard M0 exit criterion, plus two additional candidate sources. Each analysis must verify the specific digitization's license and PD basis (not merely the original record's age), confirm the serving custodian is a public institution (NARA Catalog, Library of Congress, or similar — not Fold3 or Ancestry), record the privacy-embargo determination (e.g., the 72-year rule for census records), set an extraction-method policy, and flag any sensitivity dimension. Sources are accepted only when both the License/ToS reviewer and Privacy reviewer have signed off.",
+  "objective": "Research, document, and submit allow-list entries for ≥3 candidate public-domain sources including ≥1 approved NARA census, populating every required field in the sources/allowlist.yml schema with a full license/PD analysis, privacy-embargo determination, extraction-method policy, and sensitivity flag, and securing both reviewer sign-offs on the approved entry.",
+  "acceptanceCriteria": [
+    "At least 3 candidate sources are entered in sources/allowlist.yml with all required schema fields populated.",
+    "At least 1 NARA federal census entry reaches status 'approved' (72-year rule verified; NARA-served digitization confirmed, not a Fold3/Ancestry copy; both license and privacy reviewers have signed off).",
+    "Each entry records: title, custodian, serving_custodian (public institution URL), url, format, license_basis, privacy_embargo, extraction_method, sensitivity, and status.",
+    "The per-copy/edition rights analysis for each entry explicitly notes whether the serving copy's terms were reviewed independently of the underlying record's age.",
+    "Any entry that cannot be approved (proprietary, vendor-wrapped, or privacy-embargoed) is recorded as 'rejected' with a documented reason.",
+    "Analysis writeup for each source committed alongside the allowlist update, providing the evidence chain for each approval or rejection decision."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-license-001.json",
+    "https://catalog.archives.gov/",
+    "https://1950census.archives.gov/",
+    "https://chroniclingamerica.loc.gov/",
+    "https://www.archives.gov/research/immigration"
+  ],
+  "output": "sources/allowlist.yml populated with ≥3 entries (≥1 approved NARA census) plus analysis writeups in docs/source-analyses/, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

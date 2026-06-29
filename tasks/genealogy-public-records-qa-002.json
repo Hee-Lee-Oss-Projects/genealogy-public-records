@@ -1,0 +1,35 @@
+{
+  "id": "genealogy-public-records-qa-002",
+  "title": "Deceased-determination audit of M1 batch (100% correct; zero living)",
+  "project": "genealogy-public-records",
+  "type": "research",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "privacy", "public-data", "quality-assurance"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "The deceased-determination engine classifies persons automatically, but the privacy stakes require an independent human audit of its output. A single living person admitted to the corpus is a P0 incident. The audit samples the M1 batch with an auditor who is independent of the extractor, checks each sampled record against available evidence, and confirms that every person was correctly classified as deceased and that no living relative was inadvertently admitted. Any misclassification is a blocking P0 that triggers a batch re-audit before M1 can exit.",
+  "objective": "Conduct an independent deceased-determination audit of the M1 batch, sampling records stratified by source type and deceased-determination path (positive death evidence vs. 100-year rule), and verify that 100% of sampled records are correctly classified as deceased with zero living persons present.",
+  "acceptanceCriteria": [
+    "Auditor is independent of the extractor (no self-grading).",
+    "Stratified sample drawn from the M1 batch across deceased-determination path strata (positive death evidence; birth >=100 years; both; edge cases).",
+    "Each sampled record verified against the evidence used to classify the person as deceased; classification confirmed as correct or flagged.",
+    "100% of sampled records correctly classified deceased; zero living persons found.",
+    "Any misclassification is a blocking P0: the affected batch export is pulled, root cause documented, full batch re-audited, and a post-mortem committed before re-release.",
+    "Audit report documents: methodology, sample frame, results per stratum, and any P0 incidents with full remediation log.",
+    "Audit report committed as review/qa-002-deceased-audit.md via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "tasks/genealogy-public-records-data-001.json",
+    "tasks/genealogy-public-records-privacy-001.json",
+    "tasks/genealogy-public-records-privacy-002.json"
+  ],
+  "output": "review/qa-002-deceased-audit.md — independent deceased-determination audit report with methodology, sample frame, per-stratum results, and any P0 incident log, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}

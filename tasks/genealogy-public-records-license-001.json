@@ -1,0 +1,34 @@
+{
+  "id": "genealogy-public-records-license-001",
+  "title": "Source allow-list schema (license + privacy + sensitivity) + gate policy",
+  "project": "genealogy-public-records",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "licensing"],
+  "riskTier": "medium",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "small",
+  "status": "open",
+  "context": "Before any data can be extracted, every candidate source must pass a license and privacy gate to prevent ingestion from proprietary genealogy databases (Ancestry, MyHeritage, FindMyPast, Fold3, Find A Grave, Newspapers.com) or vendor-wrapped scans of public-domain records. The gate is enforced via a machine-readable sources/allowlist.yml where each entry records the license/PD basis, the serving custodian (must be a public institution, not a vendor), a privacy-embargo determination, a sensitivity flag for enslavement-era or Indigenous records, and a status of approved/rejected/pending. This schema and its associated policy are foundational M0 deliverables that all data extraction tasks depend on.",
+  "objective": "Define the machine-readable schema for sources/allowlist.yml capturing all required fields (title, custodian, serving-custodian, URL, format, license/PD basis, privacy-embargo determination, extraction-method policy, sensitivity flag, and status) plus write the gate policy stating that all proprietary genealogy databases and vendor-wrapped scans are categorically rejected, with anti-laundering controls documented.",
+  "acceptanceCriteria": [
+    "Allow-list YAML schema specifies all required fields: title, custodian, serving_custodian (must be a public institution), url, format, license_basis, privacy_embargo, extraction_method, sensitivity (none | enslavement-era | indigenous), and status (approved | rejected | pending).",
+    "Policy document states that all proprietary genealogy databases (Ancestry, MyHeritage, FindMyPast, Fold3, Find A Grave, Newspapers.com, Geni) and any vendor-wrapped scan or index of a public-domain record are categorically rejected.",
+    "Anti-laundering controls documented: page/image-level citations required; public-custodian-only provenance; contributor attestation of independent sourcing; spot-checks for vendor-distinctive fields.",
+    "Dual sign-off requirement documented: both a License/ToS reviewer and a Privacy reviewer must approve each allow-list entry before status advances to 'approved'.",
+    "Per-copy/edition rights-verification requirement documented: PD status of the original does not imply PD status of the vendor scan/transcription.",
+    "Schema published as a machine-readable YAML schema document (sources/allowlist-schema.yml or equivalent) alongside the human-readable policy, committed via PR."
+  ],
+  "resources": [
+    "PLAN.md",
+    "https://www.archives.gov/research/census",
+    "https://www.loc.gov/collections/",
+    "https://chroniclingamerica.loc.gov/"
+  ],
+  "output": "sources/allowlist-schema.yml (machine-readable field definitions) and docs/source-gate-policy.md (human-readable gate policy with anti-laundering controls), committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}
