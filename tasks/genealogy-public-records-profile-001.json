@@ -1,0 +1,36 @@
+{
+  "id": "genealogy-public-records-profile-001",
+  "title": "Define GEDCOM X data profile + Evidence/Conclusion (GPS) layer",
+  "project": "genealogy-public-records",
+  "type": "design-spec",
+  "lane": "donated",
+  "priority": "high",
+  "domain": ["genealogy", "family-history", "open-history", "public-data", "education"],
+  "riskTier": "low",
+  "urgent": false,
+  "deliverable": "document",
+  "tokenEstimate": "medium",
+  "status": "open",
+  "context": "An open, evidence-cited family-history corpus needs a shared data profile before any data is ingested. Sources are public-domain records only (NARA federal census under the 72-year rule, immigration/naturalization, military/pension files; Library of Congress; Chronicling America; openly-licensed transcriptions) plus Wikidata/GeoNames for reconciliation. Subjects are deceased persons only; no SSN, Death-Master-File, or genetic data. Scraping any proprietary genealogy database (Ancestry, MyHeritage, FindMyPast, Fold3, Find A Grave, Newspapers.com) or any vendor-wrapped scan/index is out of scope. See PLAN.md.",
+  "objective": "Define the GEDCOM X-aligned core entities (Person, Name, Fact, Relationship, PlaceReference, SourceDescription) plus an Evidence-to-Conclusion layer encoding Genealogical Proof Standard reasoning, reusing schema.org/Wikidata vocabulary where equivalents exist, modeling conflicting claims rather than flattening them, and deliberately providing NO field for SSN/DMF/genetic data.",
+  "acceptanceCriteria": [
+    "Core entities defined with properties, datatypes, and cardinality, aligned to GEDCOM X.",
+    "Evidence-to-Conclusion (GPS) layer specified: each Conclusion links supporting Evidence and records analysis plus conflict resolution.",
+    "Each entity/property mapped to a schema.org and/or Wikidata equivalent where one exists; gaps documented.",
+    "Relationship modeled to support source-conflicting kinship claims; no single forced 'truth'.",
+    "No field exists for SSN, Death-Master-File/SSDI, or genetic/DNA data (explicit by design).",
+    "Every assertion reserves a provenance slot (source IRI + page/image locator + license + method) and an evidence-rationale slot.",
+    "Published as a human-readable spec plus a machine artifact (JSON Schema/SHACL stub)."
+  ],
+  "resources": [
+    "planning/projects/genealogy-public-records/PLAN.md",
+    "https://www.archives.gov/research/census",
+    "https://www.gedcom.org/",
+    "https://schema.org/",
+    "https://www.wikidata.org/"
+  ],
+  "output": "A data-profile specification document (profile/README.md) plus a JSON Schema/SHACL stub defining the GEDCOM X-aligned entities, the Evidence/Conclusion layer, and the schema.org/Wikidata mappings, committed via PR.",
+  "requestor": "jdev1977",
+  "verifiedNeed": false,
+  "outputLicense": "CC0-1.0"
+}
