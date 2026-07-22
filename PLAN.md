@@ -32,7 +32,7 @@ Two constraints define this project's identity and dominate everything else:
 
 1. **Licensing / terms-of-use.** **Scraping, harvesting, or bulk-copying any proprietary genealogy
    database (Ancestry, MyHeritage, FindMyPast, Fold3, Find A Grave, Newspapers.com, Geni, or
-   similar) is OUT OF SCOPE and never acceptable** under Elyos guardrails — including any
+   similar) is OUT OF SCOPE and never acceptable** under Hee-Lee Oss guardrails — including any
    vendor-wrapped *scan or index* of an otherwise-public-domain record. Data is seeded exclusively
    from records served as public domain by their public custodian (primarily **NARA** and the
    **Library of Congress**) and from explicitly openly-licensed transcriptions.
@@ -78,7 +78,7 @@ names, ages, relationships, places normalized into fields — exists only inside
 **Verified need.** The *gap* (no open, evidence-cited, GEDCOM-native family-history corpus exists)
 is real and demonstrable. However, a **named partner organization or steward who will adopt, host,
 cite, and last-mile the output is TO BE SECURED.** `verifiedNeed` is recorded **`false`** on tasks
-until that partner is in hand — honest per Elyos, where the bar is *delivered, not merged*. Securing
+until that partner is in hand — honest per Hee-Lee Oss, where the bar is *delivered, not merged*. Securing
 a steward is a first-class M0/M1 objective and a precondition for declaring the project *shipped*.
 
 **Partner org.** TO BE SECURED. Candidate stewards: a public library or genealogical society's
@@ -173,7 +173,7 @@ dedup-precision audits each draw their own stratified samples.
 **Out of scope (explicit)**
 - **Any scraping, crawling, API harvesting, bulk download, or re-publication of any proprietary
   genealogy database, or of any vendor-wrapped scan/transcription/index of a public record.** Hard
-  refusal under Elyos guardrails, not a deprioritized item.
+  refusal under Hee-Lee Oss guardrails, not a deprioritized item.
 - **Any data about living persons.** No exceptions, including "probably deceased" without evidence.
 - **Social Security Numbers, Death Master File / SSDI data, and any genetic / DNA data.**
 - Vital records (birth/marriage/death certificates) **still inside a jurisdiction's privacy
@@ -227,7 +227,7 @@ A **data/content pipeline** project (with supporting TypeScript tooling), not a 
    simple no-account explorer that shows every assertion's source and rationale.
 
 **Tech stack**
-- Tooling/extractors/validators: **TypeScript, ESM, pnpm** (Elyos conventions); `pnpm build && pnpm
+- Tooling/extractors/validators: **TypeScript, ESM, pnpm** (Hee-Lee Oss conventions); `pnpm build && pnpm
   test && pnpm lint` must pass.
 - Interchange: **GEDCOM X (JSON)** as the conceptual model; **GEDCOM 7** export for tool
   compatibility; **JSON-LD / RDF (Turtle)** for the linked-data web; identifiers as dereferenceable
@@ -241,7 +241,7 @@ A **data/content pipeline** project (with supporting TypeScript tooling), not a 
   **WCAG 2.1 AA** accessibility (keyboard navigable, semantic markup, sufficient contrast) so the
   public benefit is usable by people with disabilities.
 
-**Engineering conventions (Elyos).** TypeScript/ESM, pnpm workspaces; `pnpm build && pnpm test &&
+**Engineering conventions (Hee-Lee Oss).** TypeScript/ESM, pnpm workspaces; `pnpm build && pnpm test &&
 pnpm lint` must pass; commits signed off per the DCO (`git commit -s`); a changeset accompanies any
 user-facing change. **Lane: donated** — the human runs their own agent; the CLI never runs headless
 or authenticates an agent. Any future **funded** (metered) extraction run must move to
@@ -288,7 +288,7 @@ embargo periods** and are **out of scope until separately license/privacy-review
 A corpus **scraped, harvested, or bulk-copied from any proprietary genealogy database** — including
 **Ancestry, MyHeritage, FindMyPast, Fold3, Find A Grave, BillionGraves, Newspapers.com, Geni**, or
 similar — would **violate their terms of use and the copyright in their compiled databases**, and is
-**OUT OF SCOPE and never acceptable** under Elyos's license/privacy guardrails. This applies to:
+**OUT OF SCOPE and never acceptable** under Hee-Lee Oss's license/privacy guardrails. This applies to:
 - Automated scraping, crawling, or API harvesting of any such system.
 - Re-publishing their record entries, indexes, transcriptions, or compiled-database structure.
 - Using a **vendor-wrapped scan or index of a public-domain record** (e.g., a census image hosted
@@ -447,7 +447,7 @@ communities have specific data-governance rights.
 1. **License/ToS review (primary gate).** Before any source is processed, a reviewer confirms the
    allow-list entry: source is PD/openly licensed, the *specific copy is served by a public
    custodian* (not a vendor wrap), and it is not derived from a proprietary database. Any task that
-   proposes touching a proprietary system is **refused and flagged** per Elyos guardrails.
+   proposes touching a proprietary system is **refused and flagged** per Hee-Lee Oss guardrails.
 2. **Privacy review (co-primary gate).** A reviewer confirms the **deceased-only** invariant, the
    privacy-embargo determination, exclusion of SSN/DMF/genetic data, suppression of living relatives,
    and the sensitive-records handling. **Any living-person leak is a P0 incident.**
@@ -461,7 +461,7 @@ corpus with: **100% provenance and 100% evidence-rationale** on assertions; **de
 clean deceased-determination audit and **zero confirmed living persons**; **no SSN/DMF/genetic**
 fields; seeded from ≥4 approved public-domain sources; passing all CI gates; GEDCOM 7 + GEDCOM X JSON
 + JSON-LD exports published; a working **takedown** path (≤72h SLA); and **at least one steward that
-has adopted or cited it**. Per Elyos, *delivered ≠ merged* — the data must be in a beneficiary's hands.
+has adopted or cited it**. Per Hee-Lee Oss, *delivered ≠ merged* — the data must be in a beneficiary's hands.
 
 **Per-deed Definition of Done.** Acceptance criteria met + CI green (schema/SHACL/provenance/evidence/
 privacy/allow-list) + license review passed + privacy review passed + accuracy/citation review passed
@@ -513,7 +513,7 @@ has **adopted or cited** the corpus (Definition of Shipped met); (d) sustainabil
 ## Work breakdown
 
 The itemized, schema-mapped backlog lives in [`TASKS.md`](./TASKS.md), organized by milestone
-(M0–M3) plus a sized backlog. Each task maps to an Elyos Task JSON with type, size, risk tier,
+(M0–M3) plus a sized backlog. Each task maps to a Hee-Lee Oss Task JSON with type, size, risk tier,
 deliverable, dependencies, and reviewer. M0 deliberately front-loads the **licensing, privacy, and
 evidence** guardrails before any bulk extraction.
 
@@ -522,7 +522,7 @@ evidence** guardrails before any bulk extraction.
 - **Maintainer / Owner:** TBD — accountable for scope, the licensing + privacy gates, and releases.
 - **License/ToS reviewer:** TBD — must approve every allow-list entry; veto over any source. **Naming
   a qualified person is a hard M0 exit criterion.** Fallback if empty: no source advances past
-  `pending`, no extraction begins, M0 cannot exit; maintainer escalates to Elyos governance/board
+  `pending`, no extraction begins, M0 cannot exit; maintainer escalates to Hee-Lee Oss governance/board
   (and may engage pro-bono counsel) before any data work proceeds.
 - **Privacy reviewer:** TBD — owns the deceased-only invariant, embargo checks, SSN/DMF/genetic
   exclusion, and takedown. **Also a hard M0 exit criterion** (co-primary gate); same fallback.
@@ -534,7 +534,7 @@ evidence** guardrails before any bulk extraction.
   long-term, and cites the corpus. **TO BE SECURED** — required for "shipped."
 - **Partner / requestor:** genealogists, historians, educators, descendant communities (diffuse
   beneficiary class); a named representative org is TO BE SECURED.
-- **Elyos governance/board:** arbiter for edge cases under the published conflict-of-interest/veto
+- **Hee-Lee Oss governance/board:** arbiter for edge cases under the published conflict-of-interest/veto
   checklist (e.g., a borderline source or a sensitive-records dispute).
 
 ## Dependencies & integrations
@@ -547,7 +547,7 @@ evidence** guardrails before any bulk extraction.
 - **GEDCOM X / GEDCOM 7** specifications (interchange model + export); **schema.org / Wikidata**
   vocabularies (alignment).
 - **JSON Schema + SHACL** tooling, an RDF/JSON-LD library, a reconciliation client (TypeScript/ESM).
-- **Elyos pieces:** Task schema (`packages/schema`), CLI workspace/PR flow (`packages/cli`,
+- **Hee-Lee Oss pieces:** Task schema (`packages/schema`), CLI workspace/PR flow (`packages/cli`,
   `packages/core`), governance proposal/registry process. **Donated lane** — humans run their own agents.
 
 ## Risks & mitigations
@@ -576,7 +576,7 @@ evidence** guardrails before any bulk extraction.
   **privacy** (living-person leakage, identity-theft enablement), and **data integrity**
   (false/unsourced assertions) — addressed by the license, privacy, and accuracy gates above.
 - **Secrets handling:** no API keys/tokens are required for public-domain sources; any reconciliation
-  credentials stay out of logs, receipts, and commits per Elyos rules. The donated lane never runs
+  credentials stay out of logs, receipts, and commits per Hee-Lee Oss rules. The donated lane never runs
   headless or authenticates an agent.
 - **PII:** deceased persons only; SSN/DMF/genetic data excluded by schema and CI; living relatives
   suppressed; contributor attribution opt-in and minimal.
@@ -623,7 +623,7 @@ evidence** guardrails before any bulk extraction.
 ## References
 
 - Project proposal: `governance/proposals/genealogy-public-records.md` (TO BE CREATED)
-- Elyos work rules: `CLAUDE.md`
+- Hee-Lee Oss work rules: `CLAUDE.md`
 - Good Deed Definition & risk tiers: `docs/good-deed-definition.md`
 - Task JSON schema: `packages/schema/src/schemas.ts`
 - Portfolio roadmap: `planning/ROADMAP.md`
@@ -701,7 +701,7 @@ Twenty-five specific improvements made to the first draft, each **applied** in t
 20. **OSM ODbL share-alike + GeoNames CC BY handled explicitly** for the place gazetteer, with license
     labeling/segregation (Architecture, §7, output licenses, TASKS licenses).
 21. **No-DNA permanent non-goal** stated and surfaced as an open question to keep it deliberate (§3, §16).
-22. **Elyos engineering conventions wired in** (DCO sign-off, changesets, pnpm gates) and a
+22. **Hee-Lee Oss engineering conventions wired in** (DCO sign-off, changesets, pnpm gates) and a
     funded-lane budget-cap note for any future metered run (Architecture, TASKS mapping).
 23. **Evidence + deceased audits separated from the citation audit** as their own M1 tasks/metrics with
     independent auditors (M1 qa-001/qa-002, Metrics).
@@ -720,7 +720,7 @@ Risks & mitigations (table); Security & privacy; Sustainability & maintenance; O
 References. Plus Glossary, Appendix A, and this sign-off. Metadata header present.
 
 **Correctness check.**
-- *Licensing:* matches Elyos guardrails — proprietary-DB scraping (incl. vendor-wrapped PD scans) is a
+- *Licensing:* matches Hee-Lee Oss guardrails — proprietary-DB scraping (incl. vendor-wrapped PD scans) is a
   hard out-of-scope refusal; public-custodian-served PD only; OSM ODbL share-alike and GeoNames CC BY
   obligations are honored; CC0/CC-BY-SA segregation specified. Consistent with `CLAUDE.md`.
 - *Privacy:* deceased-only is mechanized (engine + CI + audit + decision table); SSN/DMF/genetic
@@ -750,7 +750,7 @@ References. Plus Glossary, Appendix A, and this sign-off. Metadata header presen
 track); final provenance mechanism and deceased-determination threshold values to be ratified in M0.
 These are tracked in Open questions and are the human decisions this plan surfaces.
 
-**Verdict:** Plan and backlog are internally consistent, schema-valid, and compliant with Elyos
+**Verdict:** Plan and backlog are internally consistent, schema-valid, and compliant with Hee-Lee Oss
 guardrails. Ready for maintainer review and for staffing the two hard-gate reviewer seats.
 </content>
 </invoke>

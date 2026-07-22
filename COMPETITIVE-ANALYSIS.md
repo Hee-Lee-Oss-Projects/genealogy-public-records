@@ -1,6 +1,6 @@
 # Competitive & Improvement Analysis — genealogy-public-records
 
-Analysis of the Elyos good-deed project `genealogy-public-records` (PLAN.md v0.2.0,
+Analysis of the Hee-Lee Oss good-deed project `genealogy-public-records` (PLAN.md v0.2.0,
 TASKS.md v0.2.0). The project builds an openly-licensed, structured, evidence-cited
 family-history corpus (GEDCOM X / GEDCOM 7 / JSON-LD) from public-domain US records
 (NARA census, naturalization, pension; LoC; Chronicling America), about **deceased
@@ -253,7 +253,7 @@ UK-only, search-first, and has no evidence/conflict layer.
 
 - **loc-public-domain-engine (parallel):** a shared "is this specific copy PD / public-custodian-served?"
   rights-determination engine over LoC/NARA/Chronicling America. Genealogy needs it for its allow-list;
-  factor it out as a reusable Elyos component both projects consume.
+  factor it out as a reusable Hee-Lee Oss component both projects consume.
 - **local-history-stubs (perpendicular):** deceased-person Facts (residence, occupation, place) feed
   notable-but-stub local-history figures; conversely local-history place context enriches PlaceReference
   normalization. Share the gazetteer.
