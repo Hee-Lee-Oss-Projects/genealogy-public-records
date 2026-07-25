@@ -6,7 +6,7 @@ Family history is one of the most popular research pursuits in the world, yet th
 
 **Definition of shipped:** corpus with: **100% provenance and 100% evidence-rationale** on assertions; **deceased-only** with a clean deceased-determination audit and **zero confirmed living persons**; **no SSN/DMF/genetic** fields; seeded from ≥4 approved public-domain sources; passing all CI gates; GEDCO
 
-This is a **Hee-Lee Oss** good-deed project. Contributors pull a task, do it with their own coding agent, and open a PR. Get started: https://github.com/Hee-Lee-Oss-Projects/hee-lee-oss-downloads
+This is a **Hee-Lee Oss** good-deed project. Contributors pull a task, do it with their own coding agent, and open a PR. Get started: https://github.com/HeeLeeOss/hee-lee-oss-downloads
 
 ## Plan
 - [PLAN.md](./PLAN.md) — robust enterprise plan (vision, architecture, roadmap, risks; includes an applied-improvements appendix + review sign-off)
@@ -16,7 +16,7 @@ This is a **Hee-Lee Oss** good-deed project. Contributors pull a task, do it wit
 ## Contribute
 ```bash
 hee-lee-oss browse
-hee-lee-oss next --repo Hee-Lee-Oss-Projects/genealogy-public-records --no-fork
+hee-lee-oss next --repo HeeLeeOss/genealogy-public-records --no-fork
 ```
 
 ## Licensing & review
